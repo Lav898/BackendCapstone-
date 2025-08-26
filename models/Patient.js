@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const patientSchema = new mongoose.Schema({
-    name: String,
+    username: String,
     age: Number,
     email: { type: String, required: true, unique: true },
     gender: String,

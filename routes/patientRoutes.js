@@ -8,7 +8,7 @@ const patientrouter = express.Router();
 // Patient Registration
 patientrouter.post("/register", async (req, res) => {
     try {
-        const { name, age, email, gender, contact, address, medicalHistory, password } = req.body;
+        const { username, age, email, gender, contact, address, medicalHistory, password } = req.body;
  
         // Check existing patient
         const existingPatient = await Patient.findOne({ email });
@@ -21,7 +21,7 @@ patientrouter.post("/register", async (req, res) => {
 
         // Create new patient
         const newPatient = new Patient({ 
-            name, 
+            username, 
             age, 
             gender, 
             email, 

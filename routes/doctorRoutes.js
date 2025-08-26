@@ -8,7 +8,7 @@ const doctorrouter = express.Router();
 // Doctor Registration
 doctorrouter.post("/register", async (req, res) => {
     try {
-        const { name, specialization, contact, email, experience, password } = req.body;
+        const { username, specialization, contact, email, experience, password } = req.body;
 
         // Check existing doctor
         const existingDoctor = await Doctor.findOne({ email });
@@ -21,7 +21,7 @@ doctorrouter.post("/register", async (req, res) => {
 
         // Create new doctor
         const newDoctor = new Doctor({ 
-            name, 
+            username, 
             specialization, 
             contact, 
             email, 
