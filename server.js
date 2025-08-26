@@ -22,6 +22,11 @@ app.use("/api/appointments", appointmentrouter);
 app.use("/api/auth", authrouter);
 app.use('/api/admin', adminrouter);
 
+app.get('/', (req, res) => {
+  res.send('Backend is running!');
+});
+
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB connected"))
